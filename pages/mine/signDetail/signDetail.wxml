@@ -1,0 +1,28 @@
+<!--pages/mine/signDetail/signDetail.wxml-->
+<view class="swiper-tab">
+  <view class='tipText'>现在是{{dateTime}}</view>
+  <view class='test-record-item'>
+    <view class='test-record-item-date'>序号</view>
+    <view class='test-record-item-date'>日期</view>
+    <view class='test-record-item-date'>备注</view>
+    <view class='test-record-item-date'>状态</view>
+  </view>
+  <!--wxs代码段 格式化日期 2018-09-29 14:33:30 去掉14:33:30时间段 -->
+  <wxs module="foo">
+    function formatDate(dateStr) {
+      return dateStr.split(' ')[0];
+    }
+    module.exports = {
+      formatDate: formatDate
+    }
+  </wxs>
+  <block wx:for="{{signList}}" wx:key="unique">
+    <view bindtap='clickSignItem' id ='{{item.objectId}}' class='test-record-item' style='color:royalblue;' hover-class='btn_active'>
+      <view class='test-record-item-date'>{{item.numberNo}}</view>
+      <view class='test-record-item-date'>{{foo.formatDate(item.createdAt)}}</view>
+      <view class='test-record-item-date'>第{{item.numberNo}}次签到</view>
+      <view wx:if='{{item.signComplete==true}}' class='test-record-item-date' style='color:green;'>已结束</view>
+      <view wx:else class='test-record-item-date' style='color:red;'>未结束</view>
+    </view>
+  </block>
+</view>

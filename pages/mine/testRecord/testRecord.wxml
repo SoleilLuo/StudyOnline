@@ -1,0 +1,48 @@
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">课堂测试</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">模拟测试</view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+  <swiper-item>
+    <view class='test-record-item'>
+      <view class='test-record-item-date'>测试日期</view>
+      <view class='test-record-item-series'>测试次别</view>
+      <view class='test-record-item-commit'>
+        <text>提交状态</text>
+      </view>
+      <view class='test-record-item-score'>成绩</view>
+    </view>
+    <block wx:for="{{testRecordInfo}}" wx:key="unique">
+      <view wx:if="{{item.types =='课堂测试'}}" class='test-record-item'>
+        <view class='test-record-item-date'>{{item.date}}</view>
+        <view class='test-record-item-series'>{{item.series}}</view>
+        <view class='test-record-item-commit'>
+          <icon type='success' class='test-record-item-commit-icon'></icon>
+          <text class='test-record-item-commit-text'>已签到</text>
+        </view>
+        <view class='test-record-item-score'>{{item.score}}</view>
+      </view>
+    </block>
+  </swiper-item>
+  <swiper-item>
+    <view class='test-record-item'>
+      <view class='test-record-item-date'>测试日期</view>
+      <view class='test-record-item-series'>测试次别</view>
+      <view class='test-record-item-commit'>
+        <text>提交状态</text>
+      </view>
+      <view class='test-record-item-score'>成绩</view>
+    </view>
+    <block wx:for="{{testRecordInfo}}" wx:key="unique">
+      <view wx:if="{{item.types =='模拟测试'}}" class='test-record-item'>
+        <view class='test-record-item-date'>{{item.date}}</view>
+        <view class='test-record-item-series'>{{item.series}}</view>
+        <view class='test-record-item-commit'>
+          <icon type='success' class='test-record-item-commit-icon'></icon>
+          <text class='test-record-item-commit-text'>已签到</text>
+        </view>
+        <view class='test-record-item-score'>{{item.score}}</view>
+      </view>
+    </block>
+  </swiper-item>
+</swiper>

@@ -1,0 +1,125 @@
+<view class="section">
+  <navigator url='../mine/info/info' class="user-info-container" hover-class='weui-cell_active'>
+    <view class="user-img-wrap">
+      <image class="user-img" mode="scaleToFill" src="{{weChatUserInfo.avatarUrl}}" style="background-size: 100% 100%; background-position: 0% 0%; background-repeat: no-repeat; " />
+    </view>
+    <view class="user-info-wrap">
+      <text class="c-block user-info-name">{{weChatUserInfo.nickName}}</text>
+      <text class="c-block user-info-follower">学号: {{bmobUserInfo.username}}</text>
+    </view>
+    <view class="user-info-arrow-wrap">
+      <view class="user-info-arrow" />
+    </view>
+  </navigator>
+  <view hidden='{{bmobUserInfo.userType==1}}'>
+    <view class="boundary" />
+    <view class="user-bbs-info-container">
+      <navigator class="user-post-wrap" hover-class='btn_active' url='{{errorInfo.errorPath}}'>
+        <view class="user-post-icon" />
+        <view class="user-post-text-wrap">
+          <text class="user-text">错题练习</text>
+        </view>
+        <view class="user-list-container">
+          <view class="post-list-num">{{errorInfo.errorCount}}</view>
+        </view>
+        <view class="user-arrow-wrap">
+          <view class="user-info-arrow" />
+        </view>
+      </navigator>
+      <navigator url='{{testRecordInfo.testRecordPath}}' class="user-post-wrap" hover-class='btn_active'>
+        <view class="user-join-icon" />
+        <view class="user-post-text-wrap">
+          <text class="user-text">测试记录</text>
+        </view>
+        <view class="user-list-container">
+          <view class="post-list-num">{{testRecordInfo.testRecordCount}}</view>
+        </view>
+        <view class="user-arrow-wrap">
+          <view class="user-info-arrow" />
+        </view>
+      </navigator>
+      <!-- <navigator url='' class="user-post-wrap" hover-class='btn_active'>
+        <view class="user-mine-answer" />
+        <view class="c-minheight wx-view_yg2I9A">
+          <text class="user-text">问答记录</text>
+        </view>
+        <view class="user-list-container">
+          <view class="post-list-num">2</view>
+        </view>
+        <view class="user-arrow-wrap">
+          <view class="user-info-arrow" />
+        </view>
+      </navigator> -->
+    </view>
+  </view>
+  <view hidden='{{bmobUserInfo.userType==0}}'>
+    <view class="boundary" />
+    <view class="user-bbs-info-container">
+      <view class="user-bbs-info-container">
+        <navigator class="user-post-wrap" hover-class='btn_active' bindtap='classQuestion' url='{{questionInfo.path}}'>
+          <view class="user-post-question" />
+          <view class="user-post-text-wrap">
+            <text class="user-text">课堂提问</text>
+          </view>
+          <view class="user-arrow-wrap">
+            <view class="user-info-arrow" />
+          </view>
+        </navigator>
+        <navigator class="user-post-wrap" hover-class='btn_active' url='./signDetail/signDetail'>
+          <view class="user-mine-answer" />
+          <view class="user-post-text-wrap">
+            <text class="user-text">签到信息</text>
+          </view>
+          <view class="user-arrow-wrap">
+            <view class="user-info-arrow" />
+          </view>
+        </navigator>
+        <view class="user-post-wrap" hover-class='btn_active' bindtap='classTestEnd'>
+          <view class="user-join-icon" />
+          <view class="user-post-text-wrap">
+            <text class="user-text">课堂测试收卷</text>
+          </view>
+          <view class="user-arrow-wrap">
+            <view class="user-info-arrow" />
+          </view>
+        </view>
+        <view class="user-post-wrap" hover-class='btn_active' bindtap='modelTestEnd'>
+          <view class="user-post-icon" />
+          <view class="user-post-text-wrap">
+            <text class="user-text">模拟测试收卷</text>
+          </view>
+          <view class="user-arrow-wrap">
+            <view class="user-info-arrow" />
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <view class="boundary" />
+  <view class="user-bbs-info-container">
+    <view class="user-bbs-info-container">
+      <navigator url='{{chatInfo.path}}' class="user-post-wrap" hover-class='btn_active'>
+        <view class="user-post-chat" />
+        <view class="user-post-text-wrap">
+          <text class="user-text">通知中心</text>
+        </view>
+        <view class="user-list-container">
+          <view class="post-list-num">{{chatInfo.newMessageCount}}</view>
+        </view>
+        <view class="user-arrow-wrap">
+          <view class="user-info-arrow" />
+        </view>
+      </navigator>
+      <navigator url='./aboutUs/aboutUs' class="user-post-wrap" hover-class='btn_active'>
+        <view class="user-post-aboutus" />
+        <view class="user-post-text-wrap">
+          <text class="user-text">关于我们</text>
+        </view>
+        <view class="user-arrow-wrap">
+          <view class="user-info-arrow" />
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

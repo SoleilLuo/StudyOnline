@@ -1,0 +1,98 @@
+<!--pages/mine/chat/chat.wxml-->
+<!-- <template name="temp">
+  <block wx:for="{{message}}" wx:key="unique">
+    <view>{{item.userId.objectId}}  {{bmobUserInfo.objectId}}</view>
+    <block wx:if="{{item.userId.objectId != bmobUserInfo.objectId}}">
+      <view class="reply">
+        <view class="pic">
+          <image src="{{weChatUserInfo.avatarUrl}}"></image>
+        </view>
+        <view class='msg-info'>
+          <view class='user-nickname' style='text-align: left;'>
+            <text>{{bmobUserInfo.name}}</text>
+          </view>
+          <view class='user-nickname' style='text-align: left; font-size:12px'>
+            <text>{{item.updatedAt}}</text>
+          </view>
+          <view class="content">
+            <view class="text">
+              {{item.message}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:elif="{{item.userId.objectId == bmobUserInfo.objectId}}">
+      <view class="send">
+        <view class='msg-info'>
+          <view class='user-nickname'>
+            <text>{{bmobUserInfo.name}}</text>
+          </view>
+          <view class='user-nickname' style=' font-size:12px'>
+            <text>{{item.updatedAt}}</text>
+          </view>
+          <view class="content">
+            <view class="text">
+              {{item.message}}
+            </view>
+          </view>
+        </view>
+        <view class="pic">
+          <image src="{{weChatUserInfo.avatarUrl}}"></image>
+        </view>
+      </view>
+    </block>
+  </block>
+</template> -->
+
+<scroll-view scroll-y="true" scroll-top="{{scrollTop}}">
+  <!-- <template is="temp" data="{{message}}"></template> -->
+  <block wx:for="{{message}}" wx:key="unique">
+    <block wx:if="{{item.userId.objectId != bmobUserInfo.objectId}}">
+      <view class="reply">
+        <view class="pic">
+          <image src="{{bmobUserInfo.avatarUrl}}"></image>
+        </view>
+        <view class='msg-info'>
+          <view class='user-nickname' style='text-align: left;'>
+            <text>{{item.userId.name}}</text>
+          </view>
+          <view class='user-nickname' style='text-align: left; font-size:12px'>
+            <text>{{item.updatedAt}}</text>
+          </view>
+          <view class="content">
+            <view class="text">
+              {{item.message}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:elif="{{item.userId.objectId == bmobUserInfo.objectId}}">
+      <view class="send">
+        <view class='msg-info'>
+          <view class='user-nickname'>
+            <text>{{bmobUserInfo.name}}</text>
+          </view>
+          <view class='user-nickname' style=' font-size:12px'>
+            <text>{{item.updatedAt}}</text>
+          </view>
+          <view class="content">
+            <view class="text">
+              {{item.message}}
+            </view>
+          </view>
+        </view>
+        <view class="pic">
+          <image src="{{bmobUserInfo.avatarUrl}}"></image>
+        </view>
+      </view>
+    </block>
+  </block>
+</scroll-view>
+<form bindsubmit="sendMessage" hidden='{{bmobUserInfo.userType ==0}}'>
+  <view class="sendMessage">
+    <textarea auto-height="true" name="input" class="inputMsg" value="{{inputMsg}}" />
+    <button form-type="submit" class="send">发送</button>
+  </view>
+</form>

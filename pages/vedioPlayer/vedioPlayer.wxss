@@ -1,0 +1,31 @@
+/* pages/vedioPlayer.wxss */
+.section video{
+  width: 100%;
+}
+
+.course-series{
+  height: 100rpx;
+  padding-left: 20rpx;
+  border-left-width: 5rpx;
+  border-left-color: greenyellow;
+  border-left-style: solid;
+  line-height: 100rpx;
+  color: green;
+}
+.course-vedio-item{
+  height: 60rpx;
+  padding-left: 20rpx;
+  border-left-width: 5rpx;
+  border-left-color: blue;
+  border-left-style: solid;
+  line-height: 60rpx;
+  color: rgb(7, 145, 199);
+  
+}
+.vedio-item-name{
+  padding-left: 20rpx;
+}
+.vedio-item-duration{
+  padding-left: 2rpx;
+  text-align: right;
+}

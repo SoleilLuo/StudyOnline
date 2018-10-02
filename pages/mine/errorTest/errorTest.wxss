@@ -1,0 +1,2 @@
+/* pages/mine/errorTest/errorTest.wxss */
+@import '../.././test/test.wxss';

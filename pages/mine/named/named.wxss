@@ -1,0 +1,18 @@
+/* pages/mine/named/named.wxss */
+@import "../testRecord/testRecord.wxss";
+.swiper-tab-list {
+  width: 25%;
+}
+.named-button{
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+  display: flex;
+  width: 480rpx;
+  height: 480rpx;
+  line-height: 480rpx;
+  color: red;
+  background-color: greenyellow;
+  border-radius: 50%;
+  justify-content: center;
+  font-size: 42px
+}

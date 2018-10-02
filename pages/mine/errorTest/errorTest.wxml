@@ -1,0 +1,26 @@
+<!-- pages/mine/errorTest/errorTest.wxml-->
+
+<view class="page">
+  <view class='title'>
+    <image class='header-img' src="{{weChatUserInfo.avatarUrl}}" />
+    <view class='info'>
+      <text class='nick-name'>{{weChatUserInfo.nickName}}</text>
+      <view class='school-info'>
+        <image class='school-img' />
+        <text class='school-name'>{{bmobUserInfo.school}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-grids">
+      <block wx:for="{{grids}}" wx:key="unique">
+        <navigator url="{{item.path}}" class="weui-grid" hover-class="weui-grid_active">
+
+          <view class="weui-grid__label" style='font-size: 18px;color:royalblue;'>{{item.chapter}}</view>
+          <view class="weui-grid__label" style='color:#495056;'>{{item.name}}</view>
+          <view class="weui-grid__label" style='font-size: 12px;color:rebeccapurple;'>({{item.num}})</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+</view>

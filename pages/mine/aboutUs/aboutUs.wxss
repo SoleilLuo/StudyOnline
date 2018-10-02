@@ -1,0 +1,42 @@
+/* pages/mine/aboutUs/aboutUs.wxss */
+
+.title {
+  padding: 4%;
+  margin-top: 5%;
+  color: #118fff;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content {
+  height: 150px;
+  width: 92%;
+  margin: 2%;
+  padding: 2%;
+  white-space: pre-wrap;
+  background: whitesmoke;
+  color: #118fff;
+  border-radius: 3%;
+  border: 1px solid rgb(214, 214, 214);
+}
+
+.btn-submit {
+  width: 96%;
+  margin: 2%;
+  background: #118fff;
+  color: white;
+  border-radius: 3%;
+}
+.info{
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 20%;
+  padding: 2%;
+  color: #118fff;
+  font-size: 32rpx;
+  
+}

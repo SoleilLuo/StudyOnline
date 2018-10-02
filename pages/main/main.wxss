@@ -1,0 +1,143 @@
+/**index.wxss**/
+@import '../mine/named/named.wxss';
+.container{
+  width: 100%;
+  height: 100%;
+}
+
+/* 滑动菜单样式 */
+.categories {
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #eee;
+  white-space: nowrap;
+  display: flex;
+}
+ /* 滑动菜单item样式 */
+.categories .category {
+  
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  display: inline-block;
+  border-right: 1px solid #eee;
+  color: royalblue;
+  font-size: 15px;
+}
+ /* 轮播样式 */
+.swiper{
+  width: 100%;
+  height: 240px;
+}
+/* 轮播图片样式 */
+.swiper swiper-item image{
+  width: 100%;
+  
+}
+
+/* 签到按钮样式 */
+.sign-button{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  width: 240rpx;
+  height: 240rpx;
+  line-height: 240rpx;
+  color: red;
+  background-color: greenyellow;
+  border-radius: 50%;
+  justify-content: center;
+  font-size: 36px;
+}
+/* 签到记录列表item样式 */
+.sign-record-item{
+ 
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #eee;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  color: green;
+  align-items: center;
+  justify-content: center;
+  
+}
+/* 签到记录列表item日期样式 */
+.sign-record-item-date{
+  padding-left: 50rpx;
+}
+/* 签到记录列表item次数样式 */
+.sign-record-item-count{
+  padding-left: 100rpx;
+}
+/* 签到记录列表item是否签到icon样式 */
+.sign-record-item-icon{
+  margin-top: 20px;
+  padding-left: 100rpx;
+}
+/* 签到记录列表item签到结果样式 */
+.sign-record-item-result{
+  padding-left: 15rpx;
+}
+/* 每个题目块样式 */
+.item-block{
+  margin: 2%;
+  background: rgb(232, 233, 232);
+  color: royalblue;
+  font-size: 15px;
+  padding: 4%;
+  border-radius: 3%;
+  width: 96%;
+  display: flex;
+  flex-direction: column;
+}
+/* 单选题radio-group样式 */
+.radio-group{
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+}
+/* 主观题答题区 */
+.answer-mainbody{
+  height: 150px;
+  margin: 2%;
+  padding: 6px; 
+  font-family: monospace; 
+  white-space: pre-wrap;
+  background: whitesmoke; 
+  border-radius: 3%;
+  border: 1px solid  rgb(214, 214, 214);
+  
+  }
+/* 主观题图片上传 */
+.answer-img{
+  margin: 1%;
+  background: url(http://i.pengxun.cn//content/images/imgpost2/01/post-big-pic-01.png) no-repeat 0 -286px; 
+  background-size: 100%; 
+  height: 26px; 
+  width: 26px; 
+  
+  }
+
+.answer-img-text{
+  height: 25px;
+  
+  padding: 6px; 
+  /* 超出一行文字自动隐藏 */
+  overflow:hidden; 
+  /* 文字隐藏后添加省略号 */
+  text-overflow:ellipsis;
+  /* 强制不换行 */
+  white-space:nowrap; 
+}
+.btn-commit{
+  background: royalblue;
+  color: whitesmoke;
+}
+.sign-record-text{
+  margin: 40%;
+  text-align: center;
+  color: royalblue;
+}

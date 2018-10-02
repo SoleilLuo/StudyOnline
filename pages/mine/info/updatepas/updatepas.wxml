@@ -1,0 +1,44 @@
+<!--pages/mine/info/updatepas/updatepas.wxml-->
+<view class='tip-text'>
+  <text>请设置微信密码，原先的密码初始为123，设置密码后可以用你的新密码进行登录</text>
+</view>
+<view class="boundary" />
+<form bindsubmit='updatePasswordSubmit'>
+  <view class="user-bbs-info-container">
+    <view class="user-post-wrap" hover-class='btn_active'>
+      <view class="user-post-text-wrap">
+        <text class="user-text" style='color:darkgrey;'>学号</text>
+      </view>
+      <view class="user-list-container" style='color:darkgrey;'>
+        {{bmobUserInfo.username}}
+      </view>
+    </view>
+    <view class="user-post-wrap" hover-class='btn_active'>
+      <view class="user-post-text-wrap">
+        <text class="user-text">旧密码</text>
+      </view>
+      <input class="user-list-container" password='true' placeholder='请填写旧密码' maxlength='16' name='oldPassword'>
+      </input>
+    </view>
+    <view class="user-post-wrap">
+      <view class="c-minheight wx-view_yg2I9A">
+        <text class="user-text">新密码</text>
+      </view>
+      <input class="user-list-container" password='true' placeholder='请输入新密码' maxlength='16' name='newPassword'>
+      </input>
+    </view>
+    <view class="user-post-wrap" hover-class='btn_active'>
+      <view class="c-minheight wx-view_yg2I9A">
+        <text class="user-text">确认密码</text>
+      </view>
+      <input class="user-list-container" password='true' placeholder='请再次输入新密码' maxlength='16' name='newPasswordAgain'>
+      </input>
+    </view>
+  </view>
+  <view class='tip-text'>
+    <text>密码必须至少8个字符最大16字符，而且同时包含字母和数字</text>
+  </view>
+  <view class="boundary" />
+  <button class='btn-confirm' form-type='submit'>确认修改</button>
+</form>
+<view class='forget-text'>忘记密码？</view>

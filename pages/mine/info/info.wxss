@@ -1,0 +1,130 @@
+/* pages/mine/info.wxss */
+@import "../mine.wxss";
+
+.user-text {
+  position: static;
+  font-size: 1rem;
+  line-height: 100%;
+  margin-left: 15px;
+}
+
+/*mask*/
+
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+/*content*/
+
+.drawer_box {
+  width: 650rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 1001;
+  background: #fafafa;
+  margin: -150px 50rpx 0 50rpx;
+  border-radius: 3px;
+}
+
+.drawer_title {
+  padding: 15px;
+  font: 22px;
+  text-align: center;
+  color: royalblue;
+}
+
+.drawer_content {
+  height: 90px;
+  overflow-y: scroll; /*超出父盒子高度可滚动*/
+}
+
+.btn_ok {
+  margin: 35px;
+  text-align: center;
+  border-top: 1px solid #e8e8ea;
+  color: #3cc51f;
+  font-size: 18px;
+  border-radius: 5%;
+}
+
+.top {
+  padding-top: 8px;
+}
+
+.bottom {
+  padding-bottom: 8px;
+}
+
+.title {
+  height: 40px;
+  line-height: 40px;
+  width: 160rpx;
+  text-align: center;
+  display: inline-block;
+  font: 300 28rpx/30px;
+}
+
+.input_base {
+  border: 2rpx solid #ccc;
+  padding-left: 10rpx;
+  margin-right: 50rpx;
+}
+
+.input_h30 {
+  height: 40px;
+  line-height: 40px;
+}
+
+.input_h60 {
+  height: 60px;
+}
+
+.input_view {
+  font: 16px;
+  background: #fff;
+  color: #000;
+  line-height: 40px;
+}
+
+input {
+  font: 16px;
+  background: #fff;
+  color: #000;
+}
+
+radio {
+  margin-right: 20px;
+}
+
+.grid {
+  display: -webkit-box;
+  display: box;
+}
+
+.col-0 {
+  -webkit-box-flex: 0;
+  box-flex: 0;
+}
+
+.col-1 {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}

@@ -1,0 +1,10 @@
+/* pages/mine/signDetail/signDetail.wxss */
+@import '../testRecord/testRecord.wxss';
+.tipText{
+  font-size: 30rpx;
+  color: royalblue;
+}
+.test-record-item-date{
+  font-size: 30rpx;
+  width: 25%;
+}

@@ -1,0 +1,65 @@
+/* pages/mine/testRecord/testRecord.wxss */
+
+.swiper-tab {
+  width: 100%;
+  border-bottom: 2rpx solid #777;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.swiper-tab-list {
+  font-size: 28rpx;
+  display: inline-block;
+  width: 50%;
+  color: #777;
+}
+
+.on {
+  color: #118fff;
+  border-bottom: 5rpx solid #118fff;
+  font-size: 31rpx;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-box view {
+  text-align: center;
+}
+
+.test-record-item{
+  display: flex;
+  flex-direction: row;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #777;
+}
+.test-record-item-date{
+  height: 100%;
+  width: 25%;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  
+}
+.test-record-item-series{
+  height: 100%;
+  width: 40%;
+  font-size: 28rpx;
+  line-height: 80rpx;
+}
+.test-record-item-commit{
+  height: 100%;
+  width: 20%;
+  font-size: 28rpx;
+  line-height: 80rpx;
+}
+.test-record-item-score{
+  height: 100%;
+  width: 15%;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  color: red;
+}

@@ -1,0 +1,148 @@
+<!-- index.wxml -->
+<view class='section'>
+  <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000" class='swiper'>
+    <block wx:for="{{vedioImgUrls}}" wx:key="*this">
+      <swiper-item id="{{index}}" catchtap="swiperItemClick">
+        <image src="{{item.thumbnail.url}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='bound-section'></view>
+<view class='section'>
+  <scroll-view class="categories" scroll-x="true">
+    <block wx:for="{{selectedScrollItems}}" wx:key="*this">
+      <label class="category" id="{{index}}" bindtap='scrollMenuClick'>
+        <view wx:if="{{menuIndex==index}}" style='color:green; font-size: 18px;'>{{item}}</view>
+        <view wx:else style='color:royalblue;'>{{item}}</view>
+      </label>
+    </block>
+  </scroll-view>
+</view>
+<view class='bound-line'></view>
+
+
+<view class='section' hidden='{{selectedScrollItemsHiddenSign[0]}}'>
+  <view hidden='{{!signFlag}}' style='color:red;text-align: center;'>老师正在发起第{{signNumer}}次课签到...</view>
+  <button class='sign-button' bindtap='sign'>签到</button>
+  <view class='bound-section'></view>
+  <text class='sign-record-text'>签到记录</text>
+
+  <view class='section'>
+    <block wx:for="{{mSignRecord}}" wx:key="unique">
+      <view wx:if="{{item.signFlag}}" class='sign-record-item'>
+        <view class='sign-record-item-date'>{{item.date}}</view>
+        <view class='sign-record-item-count'>第{{item.numberNo}}次课</view>
+        <icon type='success' class='sign-record-item-icon'></icon>
+        <text class='sign-record-item-result'>已签到</text>
+      </view>
+      <view wx:else class='sign-record-item' style='color:red;'>
+        <view class='sign-record-item-date'>{{item.date}}</view>
+        <view class='sign-record-item-count'>第{{item.numberNo}}次课</view>
+        <icon type='cancel' class='sign-record-item-icon'></icon>
+        <text class='sign-record-item-result'>未签到</text>
+      </view>
+    </block>
+
+  </view>
+</view>
+
+<view class='section' hidden='{{selectedScrollItemsHiddenSign[1]}}'>
+  <view wx:if="{{haveLateTestOnline == false}}" class='section item-block' style='text-align: center;font-size=20px;'>当前还没有发布最新的测试噢</view>
+  <form wx:else bindsubmit="formSubmit">
+    <view class='section item-block' style='text-align: center;font-size=20px;'>{{onlineTestSeries.series}}</view>
+    <view class='section item-block'>选择题</view>
+    <view class='section item-block' wx:for="{{onlineTestChooseItems}}" wx:for-item="i" wx:key="unique">
+      <view class='choose-item-title'>{{i.number_id}}、{{i.title}}</view>
+      <radio-group class="radio-group" name="choose-radio-group{{i.number_id}}">
+        <label class="radio" wx:for="{{i.chooseItems}}" wx:key="unique">
+          <radio value="{{item.name}}" /> {{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class='section item-block'>简答题</view>
+    <view class='section item-block' wx:for="{{onlineTestSelfQuestionItems}}" wx:key="unique">
+      <view class='choose-item-title'>{{item.number_id}}、{{item.title}}</view>
+      <textarea class="answer-mainbody" name="answer-textarea{{item.number_id}}" placeholder="在这里写下您的答案..." type="textarea" />
+      <view class="answer-img" name="answer-img{{item.number_id}}" id="{{index}}" bindtap='chooseAnswerImage'></view>
+      <text class='answer-img-text'>{{answerImgPaths[index].path}}</text>
+    </view>
+    <!-- 如果是老师则不能提交答题 -->
+    <view class='section item-block' hidden='{{bmobUserInfo.userType==1}}'>
+      <button formType="submit" class='btn-commit'>提交</button>
+    </view>
+  </form>
+</view>
+
+
+
+<view class='section' hidden='{{selectedScrollItemsHiddenSign[2]}}'>
+  <view wx:if="{{haveLateTestsimulate == false}}" class='section item-block' style='text-align: center;font-size=20px;'>当前还没有发布最新的测试噢</view>
+  <form wx:else bindsubmit="formSubmitsimulate">
+    <view class='section item-block' style='text-align: center;font-size=20px;'>{{simulateTestSeries.series}}</view>
+    <view class='section item-block'>选择题</view>
+    <view class='section item-block' wx:for="{{simulateTestChooseItems}}" wx:for-item="i" wx:key="unique">
+      <view class='choose-item-title'>{{i.number_id}}、{{i.title}}</view>
+      <radio-group class="radio-group" name="choose-radio-group{{i.number_id}}">
+        <label class="radio" wx:for="{{i.chooseItems}}" wx:key="unique">
+          <radio value="{{item.name}}" /> {{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class='section item-block'>简答题</view>
+    <view class='section item-block' wx:for="{{simulateTestSelfQuestionItems}}" wx:key="unique">
+      <view class='choose-item-title'>{{item.number_id}}、{{item.title}}</view>
+      <textarea class="answer-mainbody" name="answer-textarea{{item.number_id}}" placeholder="在这里写下您的答案..." type="textarea" />
+      <view class="answer-img" name="answer-img{{item.number_id}}" id="{{index}}" bindtap='chooseAnswerImagesimulate'></view>
+      <text class='answer-img-text'>{{simulateAnswerImgPaths[index].path}}</text>
+    </view>
+    <!-- 如果是老师则不能提交答题 -->
+    <view class='section item-block' hidden='{{bmobUserInfo.userType==1}}'>
+      <button formType="submit" class='btn-commit'>提交</button>
+    </view>
+  </form>
+
+</view>
+
+<view class='section' hidden='{{selectedScrollItemsHiddenSign[3]}}'>
+  <view class="swiper-tab">
+    <view class='test-record-item'>
+      <view class='test-record-item-date' style='width=20%;'>序号</view>
+      <view class='test-record-item-date' style='width=20%;'>学号</view>
+      <view class='test-record-item-date' style='width=20%;'>姓名</view>
+      <view class='test-record-item-date' style='width=20%;'>问答类型</view>
+      <view class='test-record-item-date' style='width=20%; color=red;'>成绩</view>
+    </view>
+    <block wx:for="{{questionAnswers}}" wx:key="unique">
+      <view class='test-record-item'>
+        <view class='test-record-item-date' style='width=20%;'>{{item.numberNo}}</view>
+        <view class='test-record-item-date' style='width=20%;'>{{item.userId.username}}</view>
+        <view class='test-record-item-date' style='width=20%;'>{{item.userId.name}}</view>
+        <view class='test-record-item-date' style='width=20%;'>{{item.type}}</view>
+        <view class='test-record-item-date' style='width=20%; color=red;'>{{item.score}} </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class='section' hidden='{{selectedScrollItemsHiddenSign[4]}}'>
+  <view class="swiper-tab">
+    <view class='test-record-item'>
+      <view class='test-record-item-date' style='width=20%;'>序号</view>
+      <view class='test-record-item-date' style='width=20%;'>学号</view>
+      <view class='test-record-item-date' style='width=20%;'>姓名</view>
+      <view class='test-record-item-date' style='width=20%;'>问答类型</view>
+      <view class='test-record-item-date' style='width=20%; color=red;'>成绩</view>
+    </view>
+    <block wx:for="{{questionAnswers}}" wx:key="unique">
+      <view class='test-record-item'>
+        <view class='test-record-item-date' style='width=20%;'>{{item.numberNo}}</view>
+        <view class='test-record-item-date' style='width=20%;'>{{item.userId.username}}</view>
+        <view class='test-record-item-date' style='width=20%;'>{{item.userId.name}}</view>
+        <view class='test-record-item-date' style='width=20%;'>{{item.type}}</view>
+        <view class='test-record-item-date' style='width=20%; color=red;'>{{item.score}} </view>
+      </view>
+    </block>
+  </view>
+
+</view>

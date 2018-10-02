@@ -1,0 +1,15 @@
+<!--pages/test/answer/answer.wxml-->
+
+<view class='section item-block' style='text-align: center;font-size=20px;'>{{mAnswers.chooseSeries}} {{mAnswers.chooseType}} (答卷)</view>
+<view class='section item-block' wx:for="{{mAnswers.chooseItemArray}}" wx:for-item="i" wx:for-index="indexChoose" wx:key="unique">
+  <view class='choose-item-title'>{{i.number_id}}、{{i.title}}</view>
+  <radio-group class="radio-group" name="choose-radio-group{{i.number_id}}">
+    <label class="radio" wx:for="{{i.chooseItems}}" wx:key="unique">
+      <radio value="{{item.name}}" disabled="true" checked='{{item.name==i.answer}}' /> {{item.value}}
+    </label>
+  </radio-group>
+  <view class='choose-item-title ' style='color:green;' wx:if='{{mAnswers.answers[indexChoose].result}}'>你的答案：{{mAnswers.answers[indexChoose].answer}} 正确答案：{{i.answer}}</view>
+  <view class='choose-item-title ' style='color:red;' wx:else>你的答案：{{mAnswers.answers[indexChoose].answer}} 正确答案：{{i.answer}}</view>
+  <view class='choose-item-title ' style='color:green;'>解析：{{i.complain}}</view>
+</view>
+<view class='section item-block' style='text-align: center;font-size=20px;color:red;'>答题共{{mAnswers.answers.length}}题，你答对{{correctAnswerCount}}题，得分{{correctAnswerCount*(100/mAnswers.answers.length)}}，请继续努力O(∩_∩)O</view>

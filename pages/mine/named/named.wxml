@@ -1,0 +1,50 @@
+<!--pages/mine/named/named.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">指定学生问答</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">随机指定</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">抢答指定</view>
+  <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">学生问答记录</view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+  <swiper-item>
+    <view class='test-record-item'>
+      <view class='test-record-item-date'>学号</view>
+      <view class='test-record-item-commit'>姓名</view>
+      <view class='test-record-item-series'>专业</view>
+      <view class='test-record-item-score'>性别</view>
+    </view>
+    <block wx:for="{{studentsInfo}}" wx:key="unique">
+      <view class='test-record-item' id='{{item.objectId}}' hover-class='btn_active' bindtap='clickStudent'>
+        <view class='test-record-item-date'>{{item.username}}</view>
+        <view class='test-record-item-commit'>{{item.name}}</view>
+        <view class='test-record-item-series'>{{item.major}}</view>
+        <view wx:if='{{item.gender==1}}' class='test-record-item-score'>男</view>
+        <view wx:else class='test-record-item-score'>女</view>
+      </view>
+    </block>
+  </swiper-item>
+  <swiper-item>
+    <button class='named-button' bindtap='sendQuestion' hover-class='btn_active'>发起问答</button>
+  </swiper-item>
+  <swiper-item>
+    <button class='named-button' bindtap='sendQuiclQuestion' hover-class='btn_active'>发起抢答</button>
+  </swiper-item>
+  <swiper-item>
+    <view class='test-record-item'>
+      <view class='test-record-item-date' style='width=20%;'>序号</view>
+      <view class='test-record-item-date' style='width=20%;'>学号</view>
+      <view class='test-record-item-date' style='width=20%;'>姓名</view>
+      <view class='test-record-item-date' style='width=20%;'>问答类型</view>
+      <view class='test-record-item-date' style='width=20%; color=red;'>成绩</view>
+    </view>
+    <block wx:for="{{questionAnswers}}" wx:key="unique">
+      <view class='test-record-item'>
+        <view class='test-record-item-date' style='width=20%;'>{{item.numberNo}}</view>
+        <view class='test-record-item-date' style='width=20%;'>{{item.userId.username}}</view>
+        <view class='test-record-item-date' style='width=20%;'>{{item.userId.name}}</view>
+        <view class='test-record-item-date' style='width=20%;'>{{item.type}}</view>
+        <view class='test-record-item-date' style='width=20%; color=red;'>{{item.score}} </view>
+      </view>
+    </block>
+  </swiper-item>
+</swiper>

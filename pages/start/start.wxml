@@ -1,0 +1,26 @@
+<!--start.wxml-->
+<view class="container">
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="/static/images/more/loading.gif"></image>
+  </view>
+  <block wx:else>
+    <view class="title">课堂宝</view>
+    <!-- <image class="title" src="/static/images/more/title8.png"></image> -->
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <image class="logo" src="{{userInfo.avatarUrl}}"></image>
+        <image class="wave" src="/static/images/more/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/static/images/more/wave.png" mode="aspectFill"></image>
+      </view>
+      <form bindsubmit='loginInfoSubmit' class="bd">
+        <input name="student_id" type="number" maxlength='11' placeholder='您的学号...' class="input-student-id"></input>
+        <input name="password" password='true'  placeholder='您的密码...' class="input-student-password"></input>
+         <!-- <image class="smalltitle" src="/static/images/more/confirm-word1.png"></image> -->
+        <button class="confirm-btn" form-type='submit' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>
+          <text >立即登录</text>
+        </button>
+        <text class="copyright">© 2018 Designed by 西安邮电大学Soleil</text>
+      </form>
+    </view>
+  </block>
+</view>

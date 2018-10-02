@@ -1,0 +1,15 @@
+<!--pages/test/detail/detail.wxml-->
+<form bindsubmit="formSubmit">
+  <view class='section item-block' style='text-align: center;font-size=20px;'>{{chooseSeries}} {{chooseType}}</view>
+  <view class='section item-block' wx:for="{{chooseItemArray}}" wx:for-item="i" wx:key="unique">
+    <view class='choose-item-title'>{{i.number_id}}、{{i.title}}</view>
+    <radio-group class="radio-group" name="choose-radio-group{{i.number_id}}">
+      <label class="radio" wx:for="{{i.chooseItems}}" wx:key="unique">
+        <radio value="{{item.name}}" /> {{item.value}}
+      </label>
+    </radio-group>
+  </view>
+  <view class='section item-block'>
+    <button formType="submit" class='btn-commit'>提交</button>
+  </view>
+</form>

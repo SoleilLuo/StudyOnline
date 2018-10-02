@@ -1,0 +1,58 @@
+{
+  "pages": [
+    
+    "pages/start/start",
+    "pages/main/main",
+    "pages/post/post",
+    "pages/mine/mine",
+    "pages/vedioPlayer/vedioPlayer",
+    "pages/test/test",
+    "pages/mine/info/info",
+    "pages/mine/info/updatepas/updatepas",
+    "pages/test/detail/detail",
+    "pages/test/answer/answer",
+    "pages/mine/chat/chat",
+    "pages/mine/errorTest/errorTest",
+    "pages/mine/aboutUs/aboutUs",
+    "pages/mine/named/named",
+    "pages/mine/testRecord/testRecord",
+    "pages/mine/signDetail/signDetail",
+    "pages/mine/signDetail/signItemDetail/signItemDetail"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#118fff",
+    "navigationBarTitleText": "课堂宝",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#9BABBA",
+    "selectedColor": "#495056",
+    "borderStyle": "black",
+    "backgroundColor": "dark",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "首页",
+        "iconPath": "static/images/tar-home.png",
+        "selectedIconPath": "static/images/tar-home-on.png"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "习题",
+        "iconPath": "static/sources/发帖32x32.png",
+        "selectedIconPath": "static/sources/发帖32x32hl.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "static/sources/我的32x32.png",
+        "selectedIconPath": "static/sources/我的32x32hl.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

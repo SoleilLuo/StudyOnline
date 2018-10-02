@@ -1,0 +1,31 @@
+/* pages/mine/info/updatepas/updatepas.wxss */
+@import "../../mine.wxss";
+.user-text{
+  position: static;
+  font-size: 1rem;
+  line-height: 100%;
+  margin-left: 15px;
+}
+.tip-text{
+  font-size: 16px;
+  padding: 25px;
+  
+}
+.user-list-container {
+  height: 25px;
+  position: absolute;
+  right: 10px;
+  width: 70%;
+  margin-left: 20px;
+  display: flex;
+}
+.btn-confirm{
+  margin-top: 15px;
+  width: 60%;
+  text-align: center;
+}
+.forget-text{
+  text-align: center;
+  color: royalblue;
+  font-size: 14px;
+}

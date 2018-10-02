@@ -1,0 +1,20 @@
+<!--pages/vedioPlayer.wxml-->
+<view class="section">
+  <video src="{{vedioItemSrc}}"   controls ></video>
+</view>
+<view class='section course-series'>
+  <text>{{course_series}}</text>    
+</view>
+<view class='bound-section'></view>
+<view class='section'>
+  <block wx:for="{{vedioSeries}}" wx:key="unique">
+    <label class='course-vedio-item' id="{{index}}" bindtap='vedioChooseClick'>
+      <text>第{{item.episode}}集</text>
+      <text class='vedio-item-name'>{{item.name}}</text>
+      <view class='vedio-item-duration'>
+      {{item.duration}}
+      </view>  
+      <view class='bound-line'></view>
+    </label>
+  </block>
+</view>

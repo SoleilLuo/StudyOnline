@@ -1,0 +1,161 @@
+<!--pages/mine/info.wxml-->
+<view class="boundary" />
+<view class="user-bbs-info-container">
+  <view bindtap="powerDrawer" id='school' data-statu="open" class="user-post-wrap" hover-class='btn_active'>
+    <view class="user-post-text-wrap">
+      <text class="user-text">学校</text>
+    </view>
+    <view class="user-list-container">
+      <view class="post-list-num">{{bmobUserInfo.school}}</view>
+    </view>
+    <view class="user-arrow-wrap">
+      <view class="user-info-arrow" />
+    </view>
+  </view>
+  <view bindtap="powerDrawer" class="user-post-wrap" id='college' hover-class='btn_active' data-statu="open">
+    <view class="user-post-text-wrap">
+      <text class="user-text">学院</text>
+    </view>
+    <view class="user-list-container">
+      <view class="post-list-num">{{bmobUserInfo.college}}</view>
+    </view>
+    <view class="user-arrow-wrap">
+      <view class="user-info-arrow" />
+    </view>
+  </view>
+  <view class="user-post-wrap">
+
+    <view class="c-minheight wx-view_yg2I9A">
+      <text class="user-text">学号</text>
+    </view>
+    <view class="user-list-container">
+      <view class="post-list-num">{{bmobUserInfo.username}}</view>
+    </view>
+  </view>
+  <view bindtap="powerDrawer" class="user-post-wrap" id='name' hover-class='btn_active' data-statu="open">
+    <view class="c-minheight wx-view_yg2I9A">
+      <text class="user-text">姓名</text>
+    </view>
+    <view class="user-list-container">
+      <view class="post-list-num">{{bmobUserInfo.name}}</view>
+    </view>
+    <view class="user-arrow-wrap">
+      <view class="user-info-arrow" />
+    </view>
+  </view>
+</view>
+<view class="boundary" />
+<view class="user-bbs-info-container">
+  <view bindtap="powerDrawer" class="user-post-wrap" id='major' hover-class='btn_active' data-statu="open">
+    <view class="user-post-text-wrap">
+      <text class="user-text">专业</text>
+    </view>
+    <view class="user-list-container">
+      <view class="post-list-num">{{bmobUserInfo.major}}</view>
+    </view>
+    <view class="user-arrow-wrap">
+      <view class="user-info-arrow" />
+    </view>
+  </view>
+  <view bindtap="powerDrawer" class="user-post-wrap" id='class' hover-class='btn_active' data-statu="open">
+    <view class="user-post-text-wrap">
+      <text class="user-text">班级</text>
+    </view>
+    <view class="user-list-container">
+      <view class="post-list-num">{{bmobUserInfo.class}}</view>
+    </view>
+    <view class="user-arrow-wrap">
+      <view class="user-info-arrow" />
+    </view>
+  </view>
+  <view class="user-post-wrap">
+    <view class="c-minheight wx-view_yg2I9A">
+      <text class="user-text">性别</text>
+    </view>
+    <view class="user-list-container">
+      <!-- <picker range="{{sexArray}}" value="{{sexIndex}}" bindchange="bindSexChange" class="post-list-num">
+      {{sexArray[sexIndex]}}</picker> -->
+      <view class="post-list-num" wx:if='{{weChatUserInfo.gender==1}}'>男</view>
+      <view class="post-list-num" wx:else>女</view>
+    </view>
+  </view>
+  <view class="user-post-wrap" hover-class='btn_active'>
+    <view class="c-minheight wx-view_yg2I9A">
+      <text class="user-text">出生日期</text>
+    </view>
+    <view class="user-list-container">
+      <picker mode="date" start="1970-1-1" end="2017-12-31" value="{{bmobUserInfo.birthday}}" fields="day" bindchange="bindDateChange" class="post-list-num">
+        <view wx:if='{{bmobUserInfo.birthday==null}}'>{{date}}</view>
+        <view wx:else>{{bmobUserInfo.birthday}}</view>
+      </picker>
+    </view>
+    <view class="user-arrow-wrap">
+      <view class="user-info-arrow" />
+    </view>
+  </view>
+</view>
+<view class="boundary" />
+<view class="user-bbs-info-container">
+  <view class="user-post-wrap" id='area'>
+    <view class="user-post-text-wrap">
+      <text class="user-text">地区</text>
+    </view>
+    <view class="user-list-container">
+      <view class="post-list-num">{{weChatUserInfo.province}} {{weChatUserInfo.city}}</view>
+    </view>
+  </view>
+  <view bindtap="powerDrawer" class="user-post-wrap" id='mobilePhoneNumber' hover-class='btn_active' data-statu="open">
+    <view class="c-minheight wx-view_yg2I9A">
+      <text class="user-text">手机号</text>
+    </view>
+    <view class="user-list-container">
+      <view class="post-list-num">{{bmobUserInfo.mobilePhoneNumber}}</view>
+    </view>
+    <view class="user-arrow-wrap">
+      <view class="user-info-arrow" />
+    </view>
+  </view>
+  <view bindtap="powerDrawer" class="user-post-wrap" id='email' hover-class='btn_active' data-statu="open">
+    <view class="c-minheight wx-view_yg2I9A">
+      <text class="user-text">邮箱</text>
+    </view>
+    <view class="user-list-container">
+      <view class="post-list-num">{{bmobUserInfo.email}}</view>
+    </view>
+    <view class="user-arrow-wrap">
+      <view class="user-info-arrow" />
+    </view>
+  </view>
+
+  <navigator url='./updatepas/updatepas' class="user-post-wrap" hover-class='btn_active'>
+    <view class="c-minheight wx-view_yg2I9A">
+      <text class="user-text">修改密码</text>
+    </view>
+    <view class="user-arrow-wrap">
+      <view class="user-info-arrow" />
+    </view>
+  </navigator>
+
+  <!-- <view bindtap="logout" class="user-post-wrap"  hover-class='btn_active'>
+    <view class="c-minheight wx-view_yg2I9A">
+      <text class="user-text">退出登录</text>
+    </view>
+    <view class="user-arrow-wrap">
+      <view class="user-info-arrow" />
+    </view>
+  </view> -->
+</view>
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+  <!--drawer content-->
+  <view class="drawer_title" id='title'>更新{{desc}}</view>
+  <form bindsubmit='powerDrawer' class="drawer_content">
+    <view class="top grid">
+      <label class="title col-0">{{desc}}</label>
+      <input class="input_base input_h30 col-1" name='inputText' placeholder='您的{{desc}}...'></input>
+    </view>
+    <button form-type='submit' class="btn_ok" bindtap="powerDrawer" data-statu="close">修改</button>
+  </form>
+</view>

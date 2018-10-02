@@ -1,0 +1,9 @@
+<!--pages/mine/aboutUs/aboutUs.wxml-->
+<text class='title'>反馈</text>
+<form bindsubmit='feedback' class='feedback-form'>
+  <textarea name='content' class='content' placeholder='你的反馈...'></textarea>
+  <button class='btn-submit' form-type='submit'>提交反馈</button>
+</form>
+<view class='info'>
+  <text>本软件作为计算机网络课程信息化辅助使用，当前版本为v1.0,如果您在使用过程中有任何问题，请给我们提交您宝贵的意见，也可以发送到邮箱：soleilluo@163.com。</text>
+</view>
